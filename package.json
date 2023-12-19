@@ -1,0 +1,17 @@
+{
+  "name": "baufest",
+  "version": "1.0.0",
+  "description": "Programming Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jose Raul Alzaibar",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.1"
+  },
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}

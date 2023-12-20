@@ -11,21 +11,6 @@ cypress/screenshots/
 # Ignore any environment-specific configuration files (e.g., cypress.env.json)
 cypress.env.json
 
-# Ignore any generated JavaScript files
-*.js
-
-# Ignore the Cypress configuration file (cypress.json)
-cypress.json
-
-# Ignore Cypress plugins file (cypress/plugins/index.js)
-cypress/plugins/
-
-# Ignore the Cypress support folder (cypress/support)
-cypress/support/
-
-# Ignore the Cypress integration tests (cypress/integration)
-cypress/integration/
-
 # Ignore any temporary files or logs
 *.log
 *.tmp

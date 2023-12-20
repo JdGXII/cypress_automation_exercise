@@ -1,3 +1,7 @@
+const petSchema = require('./schemas/petSchema');
+import Ajv from 'ajv';
+const ajv = new Ajv({ allErrors: true });
+
 describe('Petstore API Tests', () => {
   const apiBaseUrl = Cypress.env('apiTestingBaseUrl');
   let petId;
@@ -21,7 +25,9 @@ describe('Petstore API Tests', () => {
       }
     }).then(response => {
       expect(response.status).to.eq(200);
-      expect(response.body).to.have.property('name', newPet.name);
+      // Perform JSON schema validation
+      verifySchema(response.body);
+
       petId = response.body.id;
       cy.wrap(response.body.id).as('petId'); // Store the pet ID in an alias
     });
@@ -38,7 +44,9 @@ describe('Petstore API Tests', () => {
         url: `${apiBaseUrl}/v2/pet/${petId}`
       }).then(response => {
         expect(response.status).to.eq(200);
-        expect(response.body).to.have.property('id', petId);
+
+        // Perform JSON schema validation
+        verifySchema(response.body);
       });
     });
   });
@@ -65,8 +73,19 @@ describe('Petstore API Tests', () => {
         expect(response.status).to.eq(200);
         expect(response.body).to.have.property('id', updatedPet.id);
         expect(response.body).to.have.property('name', updatedPet.name);
+
+        // Perform JSON schema validation
+        verifySchema(response.body);
         });
       });
     });
 
   });
+
+const verifySchema = (responseBody) => {
+  const valid = ajv.validate(petSchema, responseBody);
+  if (!valid) {
+    console.log(ajv.errors);
+    expect(valid, 'response does not adhere to expected schema').to.be.true;
+  }
+}

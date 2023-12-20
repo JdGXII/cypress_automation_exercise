@@ -6,7 +6,7 @@ let username = `joseraul_${randomNum}`;
 let password = 'password123'
 
 // Custom function to log in
-const login = () =>{
+const login = () => {
   cy.get('#login2').click();
   cy.get('#loginusername').focus().clear().type(username, { delay: 100 });
   cy.get('#loginpassword').focus().clear().type(password, { delay: 100 });

@@ -78,18 +78,6 @@ After running the tests, Mochawesome will generate a report in the `mochawesome-
 
 Mochawesome is configured in the `cypress.json` file. You can adjust settings like report file names and whether to include console output in the reports.
 
-## Continuous Integration
-
-Instructions on setting up this project with CI tools like Jenkins, Travis CI, or GitHub Actions can be added here.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning.
-
 ## Authors
 
 - **Jose Raul Alzaibar**

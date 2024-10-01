@@ -1,7 +1,7 @@
 
 ### Cypress Test Project
 
-This project contains end-to-end tests written in Cypress. It includes test case implementation and reporting features.
+This project contains end-to-end tests written in Cypress. It includes test case implementation and reporting features
 
 ## Getting Started
 
